@@ -1,0 +1,59 @@
+
+EXECUÇÂO
+*intalar node.js---------------------------------------------------------------
+- Get-ExecutionPolicy
+Caso ele retorne Restricted, execute o comando:
+- Set-ExecutionPolicy RemoteSigned
+E escolha a opção [A] Sim para Todos
+
+Caso o comando acima apresente erro, tente usar:
+- Set-ExecutionPolicy Bypass -Scope Process
+
+Alterada a permissão, basta instalar o Chocolatey com o comando: (temos instalados já ?)
+- Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+- choco -v
+
+- choco install nvs (instaldo já?)
+E escolha a opção [A]ll - yes to all
+
+- nvs add lts
+
+- nvs ls
+- nvs link node/16.13.0/x64 versão do node aqui
+
+node -v
+npm -v
+
+--------------------------------------------------------------------------------------
+na pasta do projeto:
+
+Vite ele converte nosso código para que ele consiga rodar em todos os navegadores:
+- npm create vite@latest
+
+- npm install
+
+- npm run dev //para rodar aplicação
+
+//Instalando tailwindcss
+- npm install -D tailwindcss 
+- npx tailwindcss init -P  //ou -p
+- npm install -D tailwindcss post
+- npm install -D tailwindcss postcss autoprefixer
+
+
+
+Na pasta tailwind.config.js 
+substituir = content: ["./src/**/*.tsx"],
+
+
+
+--------------------------------------------------------------------------------------
+
+ANOTAÇÔES 
+
+*Componentes: São funções que retorna HTML <JSX>
+-Função sempre tem a primeira letra MAIUSCULA.
+
+
+
