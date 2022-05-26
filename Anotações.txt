@@ -104,7 +104,23 @@ instalando Cors(um controle de segurança para dizer quais FrontEnd pode consumi
 - npm install cors
 - npm i @types/cors -D
 
+Mobile
+instalando expo ()
+- npm install -g expo-cli
+- expo start
+
+*Fonte goole
+- expo install expo-font @expo-google-fonts/inter
+- expo install expo-add-loading
+
+ 
+
+
 --------------------------------------------------------------------------------------
+
+Integração Backend com Frontend
+- npm install axios (para fazer a requisição http da web para o backend)
+
 
 ANOTAÇÔES 
 
