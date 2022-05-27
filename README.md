@@ -10,24 +10,46 @@
   <img alt="GitHub" src="https://img.shields.io/github/license/alisson-osvaldo/NLW_Return_Impulse?color=blueviolet">
 </p>
 
+<div align="center">
+   <img src="img/feedback.jpg" align="center">
+   <img src="img/feedback-problema.jpg" align="center">
+</div>
+
 ## 🔧Técnoligia
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [React](https://reactjs.org)
-- [Tailwindcss](https://tailwindcss.com)
-- [Vite](https://vitejs.dev)
-- [TypeScript](https://www.typescriptlang.org)
-- [Express](https://expressjs.com/pt-br)
-- [Prisma](https://www.prisma.io)
-- [Jest](https://jestjs.io)
-- [React Native](https://reactnative.dev/)
+### Principais Stacks:
+- React
+- React Native
+- NodeJs
+- PostgreSQL(BD em produção)
+- Prisma
 
-## 🔖 Layout
+### Secunderias Stacks:
+- Typescript
+- Tailwind CSS
+- Headless UI (Componentes com acessibilidade)
+- Phosphor icon
+- Insomnia(Testes de rotas)
+- Jest(Teste unitários)
+- Axios(Biblioteca/API para lidar com req HTTP)
 
-Você pode visualizar o layout do projeto através do link abaixo:
+## 🔖 Layout, prototipo e demonstração de como sera feito a aplicação
+- Prototipo: https://www.figma.com/file/KpqZrTt8dBlk1k3osoFp2i/Feedback-Widget-(Community)?node-id=10%3A1638
+- Demonstração Web: https://www.figma.com/proto/KpqZrTt8dBlk1k3osoFp2i/Feedback-Widget-(Community)?node-id=10%3A1722&scaling=min-zoom&page-id=10%3A1637&starting-point-node-id=10%3A1722
+- Demonstração Mobile: https://www.figma.com/proto/KpqZrTt8dBlk1k3osoFp2i/Feedback-Widget-(Community)?node-id=113%3A2743&scaling=scale-down&page-id=10%3A1638&starting-point-node-id=113%3A2743 
 
-- [Layout Web](https://www.figma.com/community/file/1102912516166573468/Feedback-Widget)
+### Serviços usados:
+- mailtrap.io(Envio de email em ambiente de desenvolvimento e produção) + nodemailer
+
+## Executando o projeto local: 
+### Iniciar o Server
+- <pre> npm run dev / yarn dev </pre>
+- <pre> npm prisma studio / yarn prisma studio </pre>
+- ### web
+- <pre> npm run dev /  yarn dev </pre>
+
 
 ## ☕ Contatos
 
