@@ -11,8 +11,10 @@
 </p>
 
 <div align="center">
-   <img src="img/feedback.jpg" align="center">
-   <img src="img/feedback-problema.jpg" align="center">
+   <img src="img/astronautaCodeNLWReturn.png" align="center">
+   <img src="img/feedback1.jpg" align="center" width = 700px>
+   <img src="img/feedback.jpg" align="center" width = 700px>
+   <img src="img/feedback-problema.jpg" align="center" width = 700px>
 </div>
 
 ## 🔧Técnoligia
