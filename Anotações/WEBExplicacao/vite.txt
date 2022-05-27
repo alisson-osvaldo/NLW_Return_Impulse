@@ -1,0 +1,20 @@
+Vite é uma ferramenta de construção para front-end. Ele fornece uma ferramenta de criação rápida e opinativa pronta para uso, com API altamente personalizável usando plug-ins. Vite usa Rollup.
+
+https://br.atsit.in/archives/26957#:~:text=Vi 
+
+O vite é uma ferramenta que permite que a gente faça com que o nosso navegador entenda codigo de java script mais moderno, pois
+quanto mais att vai sendo lançado do JS os browser não conseguem acompanhar essas novas features em tempo real. 
+
+Por exemplo temos o nextjs, ele quando voce instala ele as vezes vem junto o webpack e sempre o babel(transpilator do js de JSX para js ou js antigo para js novo no navegador). So que 
+hoje em dia a gente não precisa disso.
+No caso o webpack ele converte tudo em um unico arquivo, para que nosso navegador consiga carregar o app 
+
+https://flaviocopes.com/how-to-install-nextjs/
+https://nextjs.org/docs
+Se der um npm i next-react-app ou npm i create-react-next-app ele instala -> React, next, webpack e o plugin babel
+
+mas o vite substitui o babel, ele faz todo esse processo de converter no js de uma formato que todos os navegadores entedam. Ele 
+não precisa substituir o webpack porque ele faz uso de esmodules, que são imports de modulos dentro do js ou seja os navegadores
+liberaram essa funcionalidade de importação dos arquivos e a partir disso a gente não precisa mais do webpack em si.
+
+Entao o vite fornece toda essa estrutura pronta pra desenvolver o projeto

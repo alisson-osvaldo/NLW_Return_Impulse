@@ -1,0 +1,19 @@
+target -> pra qual ambiente a minha aplicação vai ser compilada. porque no fim das contas os ambientes como browser, o propio node eles não
+entendem TS e sim JS, ou seja no final das contas se a gente não tiver rodando esse codigo dentro do dino a gente vai precisar converter nosso
+codigo em JS que é o que a gente faz e no target eu falo pra qual versão da ECMascript eu quero converter esse codigo. E isso depende
+porque se voce esta rodando o codigo no browser, os browser suportam uma versão da ECMascript de forma nativa mais antiga, mas o node
+ja suporta uma versão da ecmascript mais atual, então a gente não precisa trablhar com ecmascrip de es2016, a gente pode trabalhar com uma
+ecmascript de 2020 que o node vai suportar todas a  funcionalidades e com isso a gente não vai precisar ter um processo de converter 
+codigo TS para JS desnecessariamente, converter coisas que o node ja entende da sintaxe nova do TS para a velha.
+
+No fim isso ajuda no processo de compilação da nossa aplicação
+ 
+ es2020
+ "rootDir": "./src",  
+ "outDir": "./dist", -> diretorio onde os arquivos compilados vão aparecer 
+
+ rodar npx tsc -> cria uma pasta dist
+
+ isso é importante porque se eu colocar uma funçao async no server.ts e rodar o npx tsc, a gente ve que no server.js criado no dist ve que
+ ele manteve funçao async e não converteu para uma versão mais antiga do ECMascript, porque a gente falou pro node que o ambiente que a gente 
+ esta executando que a gente vai executar nossa aplicação depois em produçao suporta ecmascript 2020

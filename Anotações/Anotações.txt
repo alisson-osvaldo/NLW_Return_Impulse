@@ -1,0 +1,131 @@
+
+EXECUÇÂO
+*intalar node.js---------------------------------------------------------------
+- Get-ExecutionPolicy
+Caso ele retorne Restricted, execute o comando:
+- Set-ExecutionPolicy RemoteSigned
+E escolha a opção [A] Sim para Todos
+
+Caso o comando acima apresente erro, tente usar:
+- Set-ExecutionPolicy Bypass -Scope Process
+
+Alterada a permissão, basta instalar o Chocolatey com o comando: (temos instalados já ?)
+- Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+- choco -v
+
+- choco install nvs (instaldo já?)
+E escolha a opção [A]ll - yes to all
+
+- nvs add lts
+
+- nvs ls
+- nvs link node/16.13.0/x64 versão do node aqui
+
+node -v
+npm -v
+
+--------------------------------------------------------------------------------------
+FRONT END
+na pasta do projeto:
+
+Vite ele converte nosso código para que ele consiga rodar em todos os navegadores:
+- npm create vite@latest
+
+- npm install
+
+- npm run dev //para rodar aplicação
+
+//Instalando tailwindcss
+- npm install -D tailwindcss 
+- npx tailwindcss init -P  //ou -p
+- npm install -D tailwindcss post
+- npm install -D tailwindcss postcss autoprefixer
+
+
+
+Na pasta tailwind.config.js 
+substituir = content: ["./src/**/*.tsx"],
+---------------------------------------------------------------------------------------
+BACK END
+
+@Configurar Typescript:
+
+- npm iniy -y (como não vamos utilizar nemhum framework, já crio a package.json e posso instalar a independencias).
+
+- npm i typescript @types/node ts-node-dev _D (@types/node: traz as tipagens especificas do node para nóssa aplicação, ts-node-dev: toda vez q fizer alguma alteração no nosso projeto ele irá reiniciar o servidor node atualizando).
+
+- npm tsc --init (Cria o arquivo tsconfig.json).
+//tsconfig -> 
+*"target:"es2020", (que versão o node pode converter)
+*"module": "commonjs",
+*"rootDir": "./src",
+*"outDir: "./dist",
+
+
+@Configurar Express:
+
+- npm i express
+- npm i -D @types/express
+
+@Configurar o Prisma:
+
+Instalação do prisma (prisma: suporta multiplos bancos de dados, se eu precisar mudar de BD não precisarei mudar nemhum código).
+- npm i prisma -D
+- npm @prisma/client
+- npx prisma init
+- npx prisma migrate dev ou deploy (dev para abiente de desenvolvimento, deploy para anbiente de produção).
+em seguida da um nome para sua ultima ação no prisma ex: create feedbacks.
+-npx prisma studio (abre no navegador uma interface para navegar pela nossas tabelas do BD).
+
+Instalação da biblioteca nodemailer (biblioteca para envio de e-mail)
+- npm install nodemailer
+- npm install @types/nodemailer -D
+
+Instalação Jest (Para executar os testes)
+- npm install jest -D
+- npx jest --init
+*vai querer que ele execute um script de teste no nosso package.json? -Yes
+*Está usando TypeScript no arquivo de configuração?                   -Yes
+*Vai executar os testes no Browser ou no Node?                        -Node
+*Nos mostrar o quanto já foi testado?                                 -Yes
+*                                                                     -V8
+*Fazer uma limpa na memória para um teste não atrapahar o outro?      -Yes
+- npm instal ts-node -D 
+
+- npm i -D jest @swc/core @swc/jest
+*Na jest.config descomentar-> 
+transform: {
+    "^.+\\.(t|j)sx?$": ["@swc/jest"],
+  },
+- npm i @types/jest -D
+
+instalando Cors(um controle de segurança para dizer quais FrontEnd pode consumir nosso BackEnd )
+- npm install cors
+- npm i @types/cors -D
+
+Mobile
+instalando expo ()
+- npm install -g expo-cli
+- expo start
+
+*Fonte goole
+- expo install expo-font @expo-google-fonts/inter
+- expo install expo-add-loading
+
+ 
+
+
+--------------------------------------------------------------------------------------
+
+Integração Backend com Frontend
+- npm install axios (para fazer a requisição http da web para o backend)
+
+
+ANOTAÇÔES 
+
+*Componentes: São funções que retorna HTML <JSX>
+-Função sempre tem a primeira letra MAIUSCULA.
+
+
+

@@ -1,0 +1,46 @@
+Existe multiplas formas de testar a rota criaçao de feedback, pra ver se realmente se ela esta criando esse feedback
+
+existe extensoes no vscode pra fazer requisiçoes rest, mas iremos usar o insomnia que é uma GUI pra a gente fazer operaçoes HTTP
+
+tem o postman
+
+https://insomnia.rest/download
+
+
+Create
+request collection
+name -> NLW Return
+Create
++
+New request
+name -> Create feedback
+escolher o metodo HTTP
+post
+no body -> JSON (Para fazer comunicaçao do back com o front)
+create
+endereço -> http://localhost:3333/feedbacks
+send
+ele retorna : Hello world
+app.post("/feedbacks", (request, response) => {
+  return response.send("Hello world");
+});
+
+Testando fazendo a criaçao de um novo feedback:
+//Não coloquei a screenshot porque é opcional
+{
+	"type": "BUG",
+	"comment": "Muitos bugs"
+}
+
+dando send não da nada, entao como que faço pra pegar, tem o req do metodo post e é dele que eu pego essa informaçoes
+request.body -> body é o corpo -> isso tudo no routes.ts
+
+Dando sendo aparece isso
+{
+	"data": {
+		"id": "d2f4373d-6ad9-46dd-9347-806c50959d2c",
+		"type": "BUG",
+		"comment": "Muitos bugs",
+		"screenshot": null
+	}
+}

@@ -1,0 +1,9 @@
+Quando eu quero que algo mude ao clicar em algo no react eu tenho o estado
+
+o Estado é uma variavel como qualquer outro do JS, mas a diferença dela é que
+o React fica observando essas variaveis de estado e toda vez que essas variaveis de
+estado mudar o valor ele vai criar a interface de novo desse componente com um novo valor
+no caso o react renderiza de novo esse componente
+
+No react é comum separar componente por componente, responsabilidades unicas, quanto menor os arquivos ficarem facilita na munutenção,
+porque cada componente tem um objetivo, tem o seu problema, tem menos codigo pra entender, então fica mais facil resolver o erro que esta acontecendo com o componente

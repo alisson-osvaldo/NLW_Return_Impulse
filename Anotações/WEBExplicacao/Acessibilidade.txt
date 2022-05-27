@@ -1,0 +1,15 @@
+Acessibilidade deve ser olhada desde o inicio do projeto
+
+1 - tem que ver se é possivel navegar por tabs no nosso site
+
+2 - Avisar para usuario quando um novo elemento apareceu em tela
+
+no html existe varias tags e atributos para Acessibilidade, por o atributo alt da imagem
+
+So que existe varias bibliotecas no react que permitem a gente 
+ter componentes que são usadas para Acessibilidade, para interação do usuario
+ja acessiveis -> Reakit(ariakit) é uma biblioteca que traz elementos acessiveis para o React por exemplo popover
+tem tambem Radix
+headless ui e essa é integrada com o tailwindcss
+
+Essas bibliotecas ajudam tanto a gente dev como para quem usa o leitor de tela

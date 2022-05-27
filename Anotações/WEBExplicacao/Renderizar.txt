@@ -1,0 +1,1 @@
+Tudo react é renderizar que significa mostrar em tela

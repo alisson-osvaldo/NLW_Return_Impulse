@@ -1,0 +1,35 @@
+usando biblioteca nodemailer
+
+dependencia: npm i @types/nodemailer -D ou npm i --save-dev @types/nodemailer
+
+pra a gente enviar emails na nossa aplicaçao a gente precisa de um serviço de envio de emails 
+
+Na maioria das vezes a gente não cria na propia maquina, a gente usa serviço externo então eu posso enviar emails atraves de um serviço ou de algum email existente por exemplo um gmail da vida
+
+smtp gmail, enviar emails atraves de sua conta, mas não é legal por conta que tem alguns limites
+
+https://www.hostgator.com.br/blog/como-usar-o-servidor-smtp-do-google/?gclid=CjwKCAjw682TBhATEiwA9crl38umBapcjPtZX3kBbqTEAOPI2qZPl6rs2ai7ejHaV6ePxEJ_z5EkKhoCnAkQAvD_BwE
+
+
+com isso, existe os serviços de envio de email -> mailgun, sparkpost, mailchimp
+
+pra ambiente de desenvolvimento -> mailtrap.io -> um serviço para testar envios de email em ambiente de dev
+
+cria a conta 
+painel
+testing>inboxes
+add inbox
+name -> NLW Return
+abre o inbox e pronto varios tipos de integraçao
+nesse caso estamos usando o nodemailer
+
+e so copiar a config e coisar no server :)
+
+var transport = nodemailer.createTransport({
+  host: "smtp.mailtrap.io",
+  port: 2525,
+  auth: {
+    user: "859263f9aec6d8",
+    pass: "350b59063cb53e"
+  }
+});

@@ -1,0 +1,67 @@
+Testes unitarios 
+
+O jest ele é a ferramenta pra testar nossa aplicação, o test runer, framework de testes, vem com todas ferramentas pra testar aplicações JS automatizados testes unitarios 
+
+npm i jest -D
+
+npx jest --init -> configuraçao inicial do JEST
+
+? Would you like to use Jest when running "test" script in "package.json"? Y
+? Would you like to use Typescript for the configuration file? Y
+
+? Choose the test environment that will be used for testing » - Use arrow-keys. Return to submit.
+>   node
+    jsdom (browser-like)
+
+    no node ou no navegador : node
+
+    ? Do you want Jest to add coverage reports? -> aqui o jest fala pra gente quanto dos arquivos da nossa aplicação a gente ja testou e não testou, no caso SIM
+
+
+    ? Which provider should be used to instrument code for coverage? » - Use arrow-keys. Return to submit.
+>   v8
+    babel: v8
+
+    ? Automatically clear mock calls, instances, contexts and results before every test? -> ele faz uma limpa na memoria, antes de cada teste, pra um  teste não atrpalahar no outro, no caso SIM
+
+    Com isso ele cria o arquivo jest.config.ts
+
+    mas pra ter arquivos do jest que sao ts, a gente precisa instalar o npm i ts-node -D como dependencia de desenvolvimento
+
+    por padrão o jest so entendo arquivos JS, ele não arquivos ts, a gente precisa de alguma forma permitir que ele entenda arquivos Ts
+
+    tem o pacote ts-jest, mas ele usa o compilador do ts que é lento
+    com isso temos algumas alternativas: babel compilador js mais rapido, so que comparado com o swc ele é lento
+
+    swc -> projeto feito em rust e ele é um compiler pra js/ts ele é mais rapido que o babel
+
+    https://swc.rs/docs/usage/jest
+
+    dar o npm no swc e depois colocar na config do jest:
+      transform: {
+    "^.+\\.(t|j)sx?$": ["@swc/jest"],          -> aqui ele suporta ts, js, jsx, tsx
+  },
+
+        transform: {
+    "^.+\\.ts?$": ["@swc/jest"],               -> aqui ts
+  },
+
+
+  isso faz com que ele procure todos os arquivos de testes da nossa aplicação que eles forem ts
+
+  e quando for testar algo sempre coloque ou .test ou .spec e depois .ts
+
+  submit-feedback-use-case.test.ts
+  ou
+  submit-feedback-use-case.spec.ts
+
+  e por fim instalar npm i @types/jest -D -> tipagens do jest pra que no test('') não de erro
+
+  npm run test roda o teste
+
+  Quando eu sei que eu errei de não ter feito teste: se voce ainda encontra bugs da sua aplicação em produção ou se tem medo de fazer deploy de uma nova versão da aplicação. Os testes tem a função de trazer segurança no desenvolvimento, então testes eles não servem pra gente evitar bugs necessariamente, eles servem pra a gente ter confiança e segurança na hora de adicionar uma nova funcionalidade no codigo e de liberar uma nova funcionalidade para a produção, nesse caso a gente vai escrever testes unitarios.
+
+  Testes unitarios -> São testes que testa pequenas unidades da nossa aplicação, desaclopada de todo o restante, cada teste testa uma função especifica do nosso codigo sem testar como aquela função se integra com o restante do codigo, ou seja a gente testa a função totalmente desaclopada do restante. por exemplo: nesse caso como a gente esta criando uma suites de testes a gente chama disso quando o arquivo com varios testes para um unico arquivos. Como a gente ta criando uma suite de testes para o caso de uso submit de um novo feedback, a gente vai testar se esse caso de uso aqui ele ta fazendo tudo aquilo que ele precisa fazer, mas a gente não vai testar se esse realmente esse caso de uso ta salvando no banco ou se realmente esse caso de uso ta enviando um email, porque isso vai alem do nosso teste, a gente estaria testando camadas da nossa aplicação que vão alem do core que vao alem da regra de negocio e ai a gente começa a testar camadas de infraestruturas -> banco de dados, conexao de api e isso ja foge do teste unitario, isso ja vai para um teste de integraçao entre outros 
+
+
+  

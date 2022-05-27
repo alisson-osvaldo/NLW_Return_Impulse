@@ -1,0 +1,5 @@
+mini framework para trabalhar na parte do HTTP do nosso backend
+
+ele vai so trazer a parte de rotas, entao dado que o user acessou http://localhost:3333/constatos eu quero fazer tal coisa quando ele acessar
+isso aqui. Se ele acessar o /users/1 eu quero fazer outra coisa. Entao express so ajuda a gente nessa parte, lidar rotas da nossa aplicação.
+Lidar com diferentes endereços que o user pode acessar. Ele tem coisas a mais, mas o nucleo dele é isso

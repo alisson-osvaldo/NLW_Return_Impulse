@@ -1,0 +1,8 @@
+O fluxo vai ser simples, uma so rota na nossa aplicação back-end, um unico endpoint que o front-end vai se comunicar. Ou seja, o front so vai se
+comunicar toda vez que houver um envio de feedback, quando houver o envio de um feedback o back-end da nossa aplicação recebe essa essa informação
+salva esse feedback dentro de um banco de dados(bd) para uma consulta posterior e tambem vai enviar um email para o dono do site, pra ele saber
+que houve um novo feedback, no email vai ter as informações: screenshot, o tipo de feedback e o comentario. 
+
+Não vai ter um painel de administração, nem um back-end tão complexo com varias rotas
+
+Com uma rota ela traz o maximo de funcionalidades possiveis e testes automatizados nela 

@@ -1,0 +1,9 @@
+TypeScript é o JS com tipagem estatica
+
+Jsx é uma sintaxe que nasceu no React que permite nos escrevermos codigos em HTML dentro do JS
+
+Js + xml = JSX
+
+Da para fazer tambem css in js
+
+o TypeScript é TSX, se não tiver é JSX

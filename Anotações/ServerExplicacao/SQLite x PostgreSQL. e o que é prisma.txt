@@ -1,0 +1,47 @@
+PostgreSQL(BD em produção) x SQLite(BD em desenvolvimento)
+
+SQLite -> Vamos usar ele porque ele não precisar instalar nada em nossa maquina, salvo o banco de dados como arquivo fisico, não precisar instalar nem uma nova ferramenta, mas tem um outro motivo é porque iremos usar o prisma
+
+o Prisma é um ORM, ou seja ele é uma ferramenta que facilita a gente a trabalhar com operaçoes com banco de dados, entao o prisma ele é uma ferramenta que ele muda a forma com o que a gente se comunica com o banco de dados, ao inves da gente escrever querys sql tradicionais como select, insert, delete e update nos vamos escrever codigo JS, por exemplo:
+
+await prisma.users.create({
+  firstName: "Alice",
+  email:'sdfdsf@gmail.com',
+  active: true
+})
+
+o users é a tabela passa o comando e passa as informaçoes(campos) da tabela e no final ele converte isso em SQL
+
+entao o prisma é uma forma da gente abstrair a forma que a gente se comunica com o banco de dados, então a gente para de usar o SQL tradicional, então a gente passa a utilizar a sintaxe do prisma, que no final é convertida pro SQL tradiconal que executa no banco.
+
+Ganhos: como que o prisma ta fazendo esse meio de campo a gente pode trabalhar com banco SQLlite no ambiente de desenvolvimento da nossa aplicação server.ts e se no futuro eu quiser trocar isso pra postgre eu não vou precisar mudar nada na nossa aplicação porque o prisma suporta multiplos banco de dados, desde postgre, SQLlite, mysql, mongo etc o que acontece é que se eu fizer uma transição de um para o outro e eu estiver utilizando prisma na nossa aplicação a gente não vai precisar mudar nem um codigo da nossa aplicação nem uma query, ele mesmo muda sozinho o resultado e tem outros ganhos
+
+npm i prisma -D  -> Instala como dependencia
+npm i @prisma/client -> outra dependencia do prisma -> usado em produção em si 
+npx prisma init -> cria uma pasta e o .env
+
+.env -> variaveis de ambientes que a gente vai mudar o valor delas, dependendo do ambiente onde nossa aplicação esta executando, entao se eu estou em um ambiente de desenvolvimento  a url de acesso ao banco DATABASE_URL vai ser uma, se eu estou em um ambiente de produçao vai ser outra, então geralmente a gente tem esses arquivos .env pra configurar isso. E ela cria o .gitignore pra ignorar o envio do arquivos .env seja enviado para o repositorio, pois ele possui credenciais, possui informaçoes sigilosas 
+
+OBS: o prisma é tipo mapeamento de objeto relacional no Java usando Hibernet que ele é quem faz o meio de campo pegando as classes.jv transformando elas em tabelas do banco de dados
+
+
+Agora na pasta do prisma a gente fala que a gente quer usar o SQLlite, por padrao ele vem postgreeSQL
+indo em https://www.prisma.io/docs/concepts/database-connectors/sqlite a gente consegue configurar o prisma para usar o SQLlite ->   provider = "sqlite" e trocando no .env de postgre para sqllite tambem porque o prisma usa essa variavel ambiente ->  url = "file:./dev.db"
+
+no prisma colocar as tabelas e colunas que vao para o banco de dados
+Instalar a extensao do prisma e do env
+
+e em arquivo>preferencia>configuraçao>json(digitar)>editar em settings.json para identar de forma correta
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
+
+  pra criar a tabela no banco apos colocar no .prisma fazer npx prisma migrate dev -> o dev é porque estamos em ambiente de desenvolvimento diferente de ambiente de produçao e em vez do dev é o deploy, depois passa o nome da alteraçao que a gente fez
+
+  pra visualizar as tabelas: npx prisma studio, com isso ele abre no navegador uma interface para navegar nas tabelas
+
+  e ele cria uma pasta chamada migrations a onde dentro dela tem a data da alteraçao e o nome que voce passou e nela mostra as alteraçóes que voce fez, as instruçoes que ele vai criar no BD
+
+  Migrations -> Uma forma de a gente manter um controle de versao, um versionamento do nosso banco de dados, ou seja cada vez que eu crio uma nova tabela, mudo um capo, crio um  novo indice, a gente cria uma nova migrations, ou seja a gente tem um historico de todas as alteraçoes que forma feitas no banco de dados uma a uma, facilitando no desfazer de algo diretamente, sem afetar as outras coisas no BD e eu não preciso ficar acessando o BD em produçao pra fazer criaçao de novas tabelas, alterações de campos ou qual quer coisa assim do tipo, as minhas migratons faz isso pra mim, eu crio todas migration em ambientes de desenvolvimento e quando vou para produção eu so executo elas e todas as tabelas que criei vao ser criadas automaticamente no ambiente de produçao
+
+https://www.prisma.io

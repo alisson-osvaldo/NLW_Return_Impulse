@@ -1,0 +1,21 @@
+O que é: https://tailwindcss.com
+
+Ele é uma ferramenta de utilitarios css, ou seja varias classes que adicionam estilos nos nossos elementos html
+
+tipo um css in js
+ 
+css direto no js ou direto na tag HTML
+
+HTML, JS e CSS tudo em um so lugar
+
+Dessa forma o componente fica bem mais tranquilo de trabalhar 
+
+https://tailwindcss.com/docs/installation
+
+O proprio reseta todos os estilos da nossa aplicação 
+
+Da para usar o tailwindcss em arquivos css, fazendo as nossas proprias classes padrões usando as classes utilitarias do tailwindcss
+para elementos sem precisar usar o className no react
+/* .button{
+  @apply bg-violet-500 px-4 h-10 rounded text-violet-100
+} */

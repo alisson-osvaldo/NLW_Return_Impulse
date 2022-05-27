@@ -1,0 +1,67 @@
+SOLID -> uma sigla pra 5 principios da programaçao que a gente usa pra manter um codigo mais testavel e escalável e manutenível
+
+1S -> Single responsibility Principle
+
+2O -> Open/Closed Principle(Aberto e fechado)
+
+3L -> Liskov Substitution Principle
+
+4I -> Interface Segregation Principle
+
+5D -> Dependency Inversion Principle
+
+
+
+1 ->  Cada classe/funçao tem uma responsabilidade única -> não pode ter funçoes que executam mais de uma regra de negocio (Principal principio)
+
+2 -> As classes da nossa aplicaçao devem ser abertas para extensão mas fechadas para modificação
+
+3 -> Determina que nós devemos poder substituir uma classe pai por uma herança dela e tudo continuar funcionando -> class gaviao extends ave
+
+4 -> Contratos -> quais metodos deveria ter na classe sem exceção de nem um -> class impressora implements megaImpressora
+
+5 -> uma forma de reverter as dependencias da nossa classe/funçao -> passar as dependencias de forma inversa (Principal principio)
+
+o melhor principio é o 5 para aplicar testes, porque a nossa rota de criação de feedback não é ela que vai e busca e importa o nodemailer e faz
+o envio de email, ela recebe do mundo externo a ela essa funçao, essa dependencia pronta e ela so usa, ela nem sabe e o que isso vai fazer no comportamento final, isso ajuda muito a testar, porque em ambiente de teste a gente não quer executar envio de emails, nem salvar em bancos porque sao coisas que dependem de recursos externos, depende daquilo nao estar lento, em ambiente uniarios a gente precisa de velocidade pra testar, muita das vezes a gente quer testar a regra de negocio da nossa aplicaçao e não envio de mail, salvamento no banco entre outras coisas
+
+
+repositories -> é a nomenclatura que a gente utiliza pra arquivos que vao ser responsaveis por fazer comunicaçao da nossa aplicaçao com o banco de dados
+
+Comum: criar repositorio por entidade, por exemplo feedbacks-repository.ts -> Quais metodos existem dentro do meu repositorio de feedbacks
+porque a gente esta exportando uma interface que é considerada como contrato, e que se alguem implementa essa interface ela tem que ter esse metodos, nesse caso quais metodos existem dentro do meu repositorio de feedbacks, quais açoes a minha aplicação pode fazer com os feedbacks no meu banco de dados, apenas o metodo create e quais os dados a gente precisa pra criar o feedback
+
+feedbacks-repository.ts: Interface
+
+// Quais os dados a gente precisa pra criar o feedback
+export interface FeedbacksCreateData{
+  type: string;
+  comment: string;
+  screenshot?: string;
+}
+
+// Quais metodos existem dentro do meu repositorio de feedbacks, quais açoes a minha aplicação pode fazer com os feedbacks no meu banco de dados, apenas o metodo create
+export interface FeedbacksRepository {
+  create: (data:FeedbacksCreateData) => void;
+}
+
+
+prisma-feebacks-repository.ts: implementa interface
+
+import { FeedbacksCreateData, FeedbacksRepository } from "../feedbacks-repository";
+
+export class PrismaFeedbackRepository implements FeedbacksRepository {
+  create(data: FeedbacksCreateData) {
+    
+  };
+} 
+
+A gente separou o contrato no caso a interface, ou seja é ele quem vai dizer pra nossa aplicaçao pras rotas e casos de uso quais são as operações que a gente pode realizar no banco de dados, mas ele nao vai implementar essa operações, a gente separou a implementações das operações em um outro arquivo
+
+Mas por que disso? Caso no futuro eu precise trocar o prisma-feebacks-repository pra qualquer outra implementação que não seja do prisma, que seja um mongo, nativo ou qualquer outro e pra a gente ter o contrato separado da nossa implementação, basta eu criar outra classe que implemente esse contrato, que implemente todos os metodos do contrato e a minha aplicaçao vai continuar funcionando 100%. Ou seja, desacoplando, abstraindo parte de acesso da nossa aplicaçao em um arquivo
+
+use-cases -> casos de uso -> funcionalidades da aplicação -> cada açao que o user pode fazer dentro da nossa aplicaçao -> e cada caso de uso tem um so objetivo/responsabilidade
+
+no repositories a gente deixa tudo que é voltado para banco de dados
+
+Com isso a gente cria outra pasta para serviços, no caso envio de email  -> adaptars
