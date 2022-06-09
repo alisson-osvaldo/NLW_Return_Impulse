@@ -128,4 +128,10 @@ ANOTAÇÔES
 -Função sempre tem a primeira letra MAIUSCULA.
 
 
+//isWidgetOpen ? <p>Hello World</p> : null /*Se o isWidgetOpen for true mostre <p></p> se não null*/}
 
+
+// GET  = Buscar informações
+// POST = Cadastrar informações
+// PUT  = Atualizar a informações de uma entidade
+// PATCH = Atualizar uma informação única de uma entidade
