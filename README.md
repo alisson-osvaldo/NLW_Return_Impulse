@@ -18,13 +18,15 @@
 </div>
 
 ## Teste a aplicação aqui
+
 https://nlw-return-impulse-blue-eta.vercel.app
 
-## 🔧Técnoligia
+## 🔧Técnologia
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Principais Stacks:
+
 - React
 - React Native
 - NodeJs
@@ -32,6 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Prisma
 
 ### Secunderias Stacks:
+
 - Typescript
 - Tailwind CSS
 - Headless UI (Componentes com acessibilidade)
@@ -41,24 +44,27 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Axios(Biblioteca/API para lidar com req HTTP)
 
 ## 🔖 Layout, prototipo e demonstração de como sera feito a aplicação
+
 - Prototipo: https://www.figma.com/file/KpqZrTt8dBlk1k3osoFp2i/Feedback-Widget-(Community)?node-id=10%3A1638
 - Demonstração Web: https://www.figma.com/proto/KpqZrTt8dBlk1k3osoFp2i/Feedback-Widget-(Community)?node-id=10%3A1722&scaling=min-zoom&page-id=10%3A1637&starting-point-node-id=10%3A1722
-- Demonstração Mobile: https://www.figma.com/proto/KpqZrTt8dBlk1k3osoFp2i/Feedback-Widget-(Community)?node-id=113%3A2743&scaling=scale-down&page-id=10%3A1638&starting-point-node-id=113%3A2743 
+- Demonstração Mobile: https://www.figma.com/proto/KpqZrTt8dBlk1k3osoFp2i/Feedback-Widget-(Community)?node-id=113%3A2743&scaling=scale-down&page-id=10%3A1638&starting-point-node-id=113%3A2743
 
 ### Serviços usados:
+
 - mailtrap.io(Envio de email em ambiente de desenvolvimento e produção) + nodemailer
 
-## Executando o projeto local: 
+## Executando o projeto local:
+
 ### Iniciar o Server
+
 - <pre> npm run dev / yarn dev </pre>
 - <pre> npm prisma studio / yarn prisma studio </pre>
 - ### web
 - <pre> npm run dev /  yarn dev </pre>
 
-
 ## ☕ Contatos
 
- você vai me encontrar em qualquer uma das redes sociais abaixo:
+você vai me encontrar em qualquer uma das redes sociais abaixo:
 
 <a href = "mailto: alisson.artigas@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white" target="_blank" margin-right="10px"></a>
 <a href="https://www.linkedin.com/in/alisson-osvaldo-1420161aa/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
