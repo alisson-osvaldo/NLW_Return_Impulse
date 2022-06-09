@@ -17,7 +17,7 @@
    <img src="img/feedback-problema.jpg" align="center" width = 700px>
 </div>
 
-## 🔧Técnoligia
+## 🔧Técnologia
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
